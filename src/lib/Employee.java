@@ -7,7 +7,6 @@ import java.util.List;
 
 public class Employee {
 
-	private String firstName;
 	private String lastName;
 	private String idNumber;
 	private String address;
@@ -30,8 +29,7 @@ public class Employee {
 	private List<String> childNames;
 	private List<String> childIdNumbers;
 	
-	public Employee(String firstName, String lastName, String idNumber, String address, int yearJoined, int monthJoined, int dayJoined, boolean isForeigner, boolean gender) {
-		this.firstName = firstName;
+	public Employee(String lastName, String idNumber, String address, int yearJoined, int monthJoined, int dayJoined, boolean isForeigner, boolean gender) {
 		this.lastName = lastName;
 		this.idNumber = idNumber;
 		this.address = address;
