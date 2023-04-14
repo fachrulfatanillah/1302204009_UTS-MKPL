@@ -22,6 +22,14 @@ public class Employee {
 	}
 	
 	private jenisKelamin gender;
+
+	private enum jenisGrade{
+		grade1,
+		grade2,
+		grade3,
+	}
+
+	private jenisGrade grade;
 	
 	private int monthlySalary;
 	private int otherMonthlyIncome;
@@ -33,13 +41,14 @@ public class Employee {
 	private List<String> childNames;
 	private List<String> childIdNumbers;
 	
-	public Employee(String idNumber, int yearJoined, int monthJoined, int dayJoined, boolean isForeigner, jenisKelamin gender) {
+	public Employee(String idNumber, int yearJoined, int monthJoined, int dayJoined, boolean isForeigner, jenisKelamin gender, jenisGrade grade) {
 		this.idNumber = idNumber;
 		this.yearJoined = yearJoined;
 		this.monthJoined = monthJoined;
 		this.dayJoined = dayJoined;
 		this.isForeigner = isForeigner;
 		this.gender = gender;
+		this.grade = grade;
 		
 		childNames = new LinkedList<String>();
 		childIdNumbers = new LinkedList<String>();
@@ -50,18 +59,18 @@ public class Employee {
 	 * Jika pegawai adalah warga negara asing gaji bulanan diperbesar sebanyak 50%
 	 */
 	
-	public int setMonthlySalary(int grade) {	
-		if (grade == 1) {
+	public int setMonthlySalary(jenisGrade grade) {	
+		if (grade == "grade1") {
 			monthlySalary = 3000000;
 			if (isForeigner) {
 				monthlySalary = (int) (monthlySalary * 1.5);
 			}
-		}else if (grade == 2) {
+		}else if (grade == "grade2") {
 			monthlySalary = 5000000;
 			if (isForeigner) {
 				monthlySalary = (int) (monthlySalary * 1.5);
 			}
-		}else if (grade == 3) {
+		}else if (grade == "grade3") {
 			monthlySalary = 7000000;
 			if (isForeigner) {
 				monthlySalary = (int) (monthlySalary * 1.5);
